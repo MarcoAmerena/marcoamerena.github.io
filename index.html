@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   
   <head data-gwd-animation-mode="quickMode">
@@ -6,6 +6,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="generator" content="Google Web Designer 1.0.6.0428">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/html/jquery-1.6.2.js"></script>
+    <script>
+      var ws;
+      var channel = "MarcoAmerena";
+      function log(m) {
+      d = document.getElementById("log");
+      d.innerHTML = m + "<br/>" + d.innerHTML;
+}
+      $(document).ready(function () {
+      ws = new WebSocket("ws://sockets.mbed.org:443/ws/" + channel + "/rw");
+      ws.onopen = function(evt) {
+      document.getElementById("home_channel").setAttribute('href', "/" + channel);
+      document.getElementById("title").innerHTML = "Websockets Viewer on channel: " + channel;
+};
+    </script>
     <style type="text/css">
       html, body {
         width: 100%;
@@ -203,4 +218,92 @@
     <img src="images/wpfbb4e5e0_06.png" class="gwd-img-4pkj gwd-gen-geiqgwdanimation">
   </body>
 
+</html> -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Websocket server by Mbed</title>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<link rel="stylesheet" href="/html/images/VectorLover.css" type="text/css" />
+</script>
+<script type="text/javascript" src="/html/jquery-1.6.2.js"></script>
+<script>
+var ws;
+var channel = "MarcoAmerena";
+function log(m) {
+d = document.getElementById("log");
+d.innerHTML = m + "<br/>" + d.innerHTML;
+}
+$(document).ready(function () {
+ws = new WebSocket("ws://sockets.mbed.org:443/ws/" + channel + "/rw");
+ws.onopen = function(evt) {
+document.getElementById("home_channel").setAttribute('href', "/" + channel);
+document.getElementById("title").innerHTML = "Websockets Viewer on channel: " + channel;
+};
+ws.onmessage = function(evt) { log("message: " + evt.data); };
+ws.onclose = function(evt) { document.getElementById("log").innerHTML = ""; };
+$("#clear").click(function(evt) {
+evt.preventDefault();
+document.getElementById("log").innerHTML = "";;
+});
+$("#home_channel").click(function(evt) {
+evt.preventDefault();
+ws.close();
+setTimeout("window.parent.location = \"/\" + channel;", 300) ;
+});
+});
+</script>
+<style>
+.footer {
+font-size:0.8em;
+}
+#nav ul #next{
+background: transparent no-repeat;
+}
+#nav ul #next a {
+color: #4B3D2C;
+background: transparent no-repeat;
+}
+</style>
+</head>
+<body>
+<!-- wrap starts here -->
+<div id="wrap">
+<!--header -->
+<div id="header">
+<h1 id="logo-text"><a href="index.html" title="">Websocket server</a></h1>
+<p id="slogan">Rapid deployment and real-time communication by Mbed</p>
+<div id="top-menu">
+<p><a href="http://mbed.org">mbed.org</a></p>
+</div>
+</div>
+<div id="nav">
+<ul>
+<li id="current"><a id="welcome_tab" href="javascript:void(0)">Sender</a></li>
+<li id="next"><a id="home_channel" href="javascript:void(0)">Channel Home</a></li>
+<li id="next"><a id="home_ws" href="/" onclick="ws.close();return true;">WS Home</a></li>
+</ul>
+</div>
+<!-- content starts -->
+<div id="content">
+<p align="center">
+<strong> <font id="title" size = +2>Websocket viewer: connection not active!</font></strong> <br /><br />
+<input type="submit" id="clear" value="clear" />
+<div id="log"></div>
+</p>
+</div>
+<div id="footer">
+<p>
+© ARM Online Tools Group
+      
+<a href="http://www.bluewebtemplates.com/" title="Website Templates">website templates</a> by <a href="http://www.styleshout.com/">styleshout</a> |
+Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> |
+<a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
+</p>
+</div>
+<!-- wrap ends here -->
+</div>
+</body>
 </html>
+
