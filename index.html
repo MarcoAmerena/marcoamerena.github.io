@@ -236,7 +236,7 @@ d = document.getElementById("log");
 d.innerHTML = m + "<br/>" + d.innerHTML;
 }
 $(document).ready(function () {
-ws = new WebSocket("ws://sockets.mbed.org:443/ws/" + channel + "/rw");
+ws = new WebSocket("ws://echo.websocket.org/" + channel + "/rw");
 ws.onopen = function(evt) {
 document.getElementById("home_channel").setAttribute('href', "/" + channel);
 document.getElementById("title").innerHTML = "Websockets Viewer on channel: " + channel;
