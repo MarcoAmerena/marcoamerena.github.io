@@ -220,6 +220,10 @@
 
 </html> -->
 
+
+<!-------------------------------------------------------------------------------------------------------------------->
+
+<!--
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -268,9 +272,9 @@ background: transparent no-repeat;
 </style>
 </head>
 <body>
-<!-- wrap starts here -->
+<!-- wrap starts here --
 <div id="wrap">
-<!--header -->
+<!--header --
 <div id="header">
 <h1 id="logo-text"><a href="index.html" title="">Websocket server</a></h1>
 <p id="slogan">Rapid deployment and real-time communication by Mbed</p>
@@ -285,7 +289,7 @@ background: transparent no-repeat;
 <li id="next"><a id="home_ws" href="/" onclick="ws.close();return true;">WS Home</a></li>
 </ul>
 </div>
-<!-- content starts -->
+<!-- content starts --
 <div id="content">
 <p align="center">
 <strong> <font id="title" size = +2>Websocket viewer: connection not active!</font></strong> <br /><br />
@@ -302,8 +306,80 @@ Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> |
 <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
 </p>
 </div>
-<!-- wrap ends here -->
+<!-- wrap ends here --
 </div>
 </body>
-</html>
+</html> -->
+
+<!------------------------------------------------------------------------------------------------------------------------>
+
+<!DOCTYPE html>
+
+<meta charset="utf-8" />
+
+<title>WebSocket Test</title>
+
+<script language="javascript" type="text/javascript">
+
+  var wsUri = "ws://echo.websocket.org/";
+  var output;
+
+  function init()
+  {
+    output = document.getElementById("output");
+    testWebSocket();
+  }
+
+  function testWebSocket()
+  {
+    websocket = new WebSocket(wsUri);
+    websocket.onopen = function(evt) { onOpen(evt) };
+    websocket.onclose = function(evt) { onClose(evt) };
+    websocket.onmessage = function(evt) { onMessage(evt) };
+    websocket.onerror = function(evt) { onError(evt) };
+  }
+
+  function onOpen(evt)
+  {
+    writeToScreen("CONNECTED");
+    doSend("WebSocket rocks");
+  }
+
+  function onClose(evt)
+  {
+    writeToScreen("DISCONNECTED");
+  }
+
+  function onMessage(evt)
+  {
+    writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
+    websocket.close();
+  }
+
+  function onError(evt)
+  {
+    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+  }
+
+  function doSend(message)
+  {
+    writeToScreen("SENT: " + message); 
+    websocket.send(message);
+  }
+
+  function writeToScreen(message)
+  {
+    var pre = document.createElement("p");
+    pre.style.wordWrap = "break-word";
+    pre.innerHTML = message;
+    output.appendChild(pre);
+  }
+
+  window.addEventListener("load", init, false);
+
+</script>
+
+<h2>WebSocket Test</h2>
+
+<div id="output"></div>
 
