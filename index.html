@@ -223,7 +223,7 @@
 
 <!-------------------------------------------------------------------------------------------------------------------->
 
-<!--
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -272,9 +272,9 @@ background: transparent no-repeat;
 </style>
 </head>
 <body>
-<!-- wrap starts here --
+<!-- wrap starts here -->
 <div id="wrap">
-<!--header --
+<!--header -->
 <div id="header">
 <h1 id="logo-text"><a href="index.html" title="">Websocket server</a></h1>
 <p id="slogan">Rapid deployment and real-time communication by Mbed</p>
@@ -289,7 +289,7 @@ background: transparent no-repeat;
 <li id="next"><a id="home_ws" href="/" onclick="ws.close();return true;">WS Home</a></li>
 </ul>
 </div>
-<!-- content starts --
+<!-- content starts -->
 <div id="content">
 <p align="center">
 <strong> <font id="title" size = +2>Websocket viewer: connection not active!</font></strong> <br /><br />
@@ -306,10 +306,10 @@ Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> |
 <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
 </p>
 </div>
-<!-- wrap ends here --
+<!-- wrap ends here -->
 </div>
 </body>
-</html> -->
+</html> 
 
 <!------------------------------------------------------------------------------------------------------------------------>
 
@@ -383,50 +383,3 @@ Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> |
 <h2>WebSocket Test</h2>
 
 <div id="output"></div> -->
-
-<html>
-    <head>
-        <script src="mbedRPC.js" language="javascript"></script>
-        <script type="text/javascript">
-            mbed = new HTTPRPC();
-            led1 = new DigitalOut(mbed, LED1);
-            ain = new AnalogIn(mbed, p20);  
-            led2 = new PwmOut(mbed, LED3);
-            function print(str){
-                document.getElementById("t").innerHTML = str;
-            }
-        </script>
-    </head>
-    <body>
-        <p>mbedRPC javascript example! Using the mbedRPC javascript library 
-                  to control mbed over http;
-        <a href="http://mbed.org/cookbook/Interfacing-using-JavaScript"> 
-                  for more information goto the cookbook </a>
-        <br>
-        This script will flash LED1 and read the value of AnalogIn p20
-                every second
-        </p>
-        <div id="t"><br/>
-        </div>
-        <script language="javascript">
-            var i = 1;
-            var x = 0;
-            function tick(){
-                led1.write(i);
-                if(i == 0){
-                    i = 1;
-                }else{
-                    i = 0;
-                                }
-                led2.write(x);
-                x = x + 0.1;
-                if(x >= 1) 
-                    x = 0;
-                f = ain.read();
-                print(f);
-            }
-            setInterval("tick()",1000);         
-        </script>
-    </body>
-</html>
-
