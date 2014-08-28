@@ -313,7 +313,7 @@ Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> |
 
 <!------------------------------------------------------------------------------------------------------------------------>
 
-<!DOCTYPE html>
+<!--DOCTYPE html>
 
 <meta charset="utf-8" />
 
@@ -382,5 +382,51 @@ Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> |
 
 <h2>WebSocket Test</h2>
 
-<div id="output"></div>
+<div id="output"></div> -->
+
+<html>
+    <head>
+        <script src="mbedRPC.js" language="javascript"></script>
+        <script type="text/javascript">
+            mbed = new HTTPRPC();
+            led1 = new DigitalOut(mbed, LED1);
+            ain = new AnalogIn(mbed, p20);  
+            led2 = new PwmOut(mbed, LED3);
+            function print(str){
+                document.getElementById("t").innerHTML = str;
+            }
+        </script>
+    </head>
+    <body>
+        <p>mbedRPC javascript example! Using the mbedRPC javascript library 
+                  to control mbed over http;
+        <a href="http://mbed.org/cookbook/Interfacing-using-JavaScript"> 
+                  for more information goto the cookbook </a>
+        <br>
+        This script will flash LED1 and read the value of AnalogIn p20
+                every second
+        </p>
+        <div id="t"><br/>
+        </div>
+        <script language="javascript">
+            var i = 1;
+            var x = 0;
+            function tick(){
+                led1.write(i);
+                if(i == 0){
+                    i = 1;
+                }else{
+                    i = 0;
+                                }
+                led2.write(x);
+                x = x + 0.1;
+                if(x >= 1) 
+                    x = 0;
+                f = ain.read();
+                print(f);
+            }
+            setInterval("tick()",1000);         
+        </script>
+    </body>
+</html>
 
