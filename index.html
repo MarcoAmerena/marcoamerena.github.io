@@ -1,29 +1,11 @@
 
-
-<!------------------------------------------------------------------------------------------------------------------------>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   
   <head data-gwd-animation-mode="quickMode">
-    <title>Alpha</title>
+    <title>Websockets</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="generator" content="Google Web Designer 1.0.6.0428">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/html/jquery-1.6.2.js"></script>
-    <script>
-      var ws;
-      var channel = "MarcoAmerena";
-      function log(m) {
-      d = document.getElementById("log");
-      d.innerHTML = m + "<br/>" + d.innerHTML;
-}
-      $(document).ready(function () {
-      ws = new WebSocket("ws://sockets.mbed.org:443/ws/" + channel + "/rw");
-      ws.onopen = function(evt) {
-      document.getElementById("home_channel").setAttribute('href', "/" + channel);
-      document.getElementById("title").innerHTML = "Websockets Viewer on channel: " + channel;
-};
-    </script>
+    <meta name="generator" content="Google Web Designer 1.1.2.0814">
     <style type="text/css">
       html, body {
         width: 100%;
@@ -31,649 +13,113 @@
         margin: 0px;
       }
       body {
-        -webkit-transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-div-g6b6 {
-        position: absolute;
-        text-align: left;
-        font-family: serif;
-        font-size: 25px;
-        color: rgb(69, 109, 194);
-        font-weight: bold;
-        left: 309.2900085449212px;
-        top: 175.1398925781251px;
-        -webkit-transform: translate3d(-34px, 7.5px, 0px);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-div-tgi6 {
-        position: absolute;
-        font-family: serif;
-        font-size: 25px;
-        font-weight: bold;
-        text-align: left;
-        color: rgb(69, 109, 194);
-        left: 336.2900085449212px;
-        top: 244.13989257812503px;
-        -webkit-transform: translate3d(-34px, 7.5px, 0px);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-div-qivv {
-        position: absolute;
-        font-family: serif;
-        font-size: 25px;
-        font-weight: bold;
-        text-align: left;
-        color: rgb(69, 109, 194);
-        left: 338.2900085449212px;
-        top: 313.139892578125px;
-        -webkit-transform: translate3d(-34px, 7.5px, 0px);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-div-ho66 {
-        position: absolute;
-        text-align: left;
-        color: rgb(69, 109, 194);
-        font-family: serif;
-        font-size: 25px;
-        font-weight: bold;
-        left: 407.29000854492114px;
-        top: 383.139892578125px;
-        -webkit-transform: translate3d(-34px, 7.5px, 0px);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-div-23s2 {
-        position: absolute;
-        text-align: left;
-        font-family: sans-serif;
-        color: rgb(56, 76, 192);
-        left: 608px;
-        top: 60px;
-        -webkit-transform: translate3d(-34px, 7.5px, 0px);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-button-fx8m {
-        height: 30px;
-        width: 100px;
-        -webkit-transform: translate3d(762px, 251.5px, 0px);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-button-h13h {
-        height: 30px;
-        width: 100px;
-        top: 0px;
-        left: 104px;
-        -webkit-transform: translate3d(790px, 251.5px, 0px);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-button-vddb {
-        top: 2px;
-        left: 62px;
-        height: 30px;
-        width: 100px;
-        -webkit-transform: translate3d(450px, 325.5px, 0px);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-button-tnz6 {
-        height: 30px;
-        width: 100px;
-        -webkit-transform: translate3d(478px, 325.5px, 0px);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-div-pkq9 {
-        -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-body {
         background-color: transparent;
-        height: 100%;
-      }
-      .gwd-button-vbyb {
-        width: 100px;
-        height: 30px;
-        -webkit-transform: translate3d(818px, 251.5px, 0px);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-button-a21l {
-        width: 100px;
-        height: 30px;
-        -webkit-transform: translate3d(506px, 325.5px, 0px);
-        -webkit-transform-style: preserve-3d;
-      }
-      .gwd-img-rb10 {
-        position: absolute;
-        height: 85px;
-        width: 90px;
-        left: 819px;
-        top: 510.78571428571433px;
-      }
-      .gwd-img-4pkj {
-        position: absolute;
-        left: 463.5px;
-        top: 509.49999999999966px;
-        width: 350px;
-        height: 85px;
-      }
-      .gwd-span-7os2 {
-        position: absolute;
-        text-align: left;
-        font-family: serif;
-        font-size: 25px;
-        height: 30px;
-        left: 432px;
-        top: 181.5px;
-        width: 95px;
-      }
-      .gwd-span-5czj {
-        position: absolute;
-        font-family: serif;
-        font-size: 25px;
-        text-align: left;
-        color: rgb(0, 0, 0);
-        height: 30px;
-        left: 432px;
-        top: 251px;
-        width: 95px;
-      }
-      .gwd-span-34nf {
-        position: absolute;
-        font-family: serif;
-        font-size: 25px;
-        text-align: left;
-        color: rgb(0, 0, 0);
-        height: 30px;
-        left: 432px;
-        top: 319px;
-        width: 95px;
-      }
-      .gwd-span-9l4x {
-        position: absolute;
-        font-family: serif;
-        font-size: 25px;
-        text-align: left;
-        color: rgb(0, 0, 0);
-        height: 30px;
-        left: 434px;
-        top: 389px;
-        width: 95px;
-      }
-    </style>
-  </head>
-  
-  <body class="gwd-body">
-    <button class="gwd-button-fx8m gwd-gen-yijvgwdanimation">+</button>
-    <button class="gwd-button-h13h gwd-gen-11l6gwdanimation">-</button>
-    <button class="gwd-button-vbyb gwd-gen-nwk3gwdanimation">Save</button>
-    <button class="gwd-button-vddb gwd-gen-mivzgwdanimation">+</button>
-    <button class="gwd-button-tnz6 gwd-gen-kli1gwdanimation">-</button>
-    <button class="gwd-button-a21l gwd-gen-8jptgwdanimation">Save</button>
-    <div class="gwd-div-g6b6 gwd-gen-mhs5gwdanimation">Temperature:</div> <span class="gwd-span-7os2 gwd-gen-bai6gwdanimation"></span>
-
-    <div class="gwd-div-tgi6 gwd-gen-aegpgwdanimation">Trip Level:</div> <span class="gwd-span-5czj gwd-gen-pkvkgwdanimation"></span>
-
-    <div class="gwd-div-qivv gwd-gen-o901gwdanimation">Hysteresis:</div> <span class="gwd-span-34nf gwd-gen-rfmxgwdanimation"></span>
-
-    <div class="gwd-div-ho66 gwd-gen-7r0sgwdanimation">Led:</div> <span class="gwd-span-9l4x gwd-gen-q8qugwdanimation"></span>
-
-     <h1 class="gwd-div-23s2 gwd-gen-i5z4gwdanimation">THERMOSTAT</h1>
-
-    <img src="images/virus.jpg" alt="Virus" class="gwd-img-rb10 gwd-gen-qn3egwdanimation">
-    <img src="images/wpfbb4e5e0_06.png" class="gwd-img-4pkj gwd-gen-geiqgwdanimation">
-  </body>
-
-</html> -->
-
-
-<!-------------------------------------------------------------------------------------------------------------------->
-
-
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<title>Websocket server by Mbed</title>
-<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-<link rel="stylesheet" href="/marcoamerena.github.io/vectorlover.css" type="text/css" />
-</script>
-<script type="text/javascript" src="/html/jquery-1.6.2.js"></script>
-<script>
-var ws;
-var channel = "MarcoAmerena";
-function log(m) {
-d = document.getElementById("log");
-d.innerHTML = m + "<br/>" + d.innerHTML;
-}
-$(document).ready(function () {
-ws = new WebSocket("ws://echo.websocket.org/" + channel + "/rw");
-ws.onopen = function(evt) {
-document.getElementById("home_channel").setAttribute('href', "/" + channel);
-document.getElementById("title").innerHTML = "Websockets Viewer on channel: " + channel;
-};
-ws.onmessage = function(evt) { log("message: " + evt.data); };
-ws.onclose = function(evt) { document.getElementById("log").innerHTML = ""; };
-$("#clear").click(function(evt) {
-evt.preventDefault();
-document.getElementById("log").innerHTML = "";;
-});
-$("#home_channel").click(function(evt) {
-evt.preventDefault();
-ws.close();
-setTimeout("window.parent.location = \"/\" + channel;", 300) ;
-});
-});
-</script>
-<style>
-.footer {
-font-size:0.8em;
-}
-#nav ul #next{
-background: transparent no-repeat;
-}
-#nav ul #next a {
-color: #4B3D2C;
-background: transparent no-repeat;
-}
-</style>
-</head>
-<body>
-// wrap starts here 
-<div id="wrap">
-//header 
-<div id="header">
-<h1 id="logo-text"><a href="index.html" title="">Websocket server</a></h1>
-<p id="slogan">Rapid deployment and real-time communication by Mbed</p>
-<div id="top-menu">
-<p><a href="http://mbed.org">mbed.org</a></p>
-</div>
-</div>
-<div id="nav">
-<ul>
-<li id="current"><a id="welcome_tab" href="javascript:void(0)">Sender</a></li>
-<li id="next"><a id="home_channel" href="javascript:void(0)">Channel Home</a></li>
-<li id="next"><a id="home_ws" href="/" onclick="ws.close();return true;">WS Home</a></li>
-</ul>
-</div>
-// content starts 
-<div id="content">
-<p align="center">
-<strong> <font id="title" size = +2>Websocket viewer: connection not active!</font></strong> <br /><br />
-<input type="submit" id="clear" value="clear" />
-<div id="log"></div>
-</p>
-</div>
-<div id="footer">
-<p>
-© ARM Online Tools Group
-      
-<a href="http://www.bluewebtemplates.com/" title="Website Templates">website templates</a> by <a href="http://www.styleshout.com/">styleshout</a> |
-Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> |
-<a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
-</p>
-</div>
-// wrap ends here 
-</div>
-</body>
-</html> 
-
-<!------------------------------------------------------------------------------------------------------------------------>
-
-<!--DOCTYPE html>
-
-<meta charset="utf-8" />
-
-<title>WebSocket Test</title>
-
-<script language="javascript" type="text/javascript">
-<script src="//d10ka0m22z5ju5.cloudfront.net/toolkit/evrythng-js-sdk/evrythng-2.0.3.min.js"></script>
-
-  var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
-  var output;
-
-  function init()
-  {
-    output = document.getElementById("output");
-    testWebSocket();
-  }
-
-  function testWebSocket()
-  {
-    websocket = new WebSocket(wsUri);
-    websocket.onopen = function(evt) { onOpen(evt) };
-    websocket.onclose = function(evt) { onClose(evt) };
-    websocket.onmessage = function(evt) { onMessage(evt) };
-    websocket.onerror = function(evt) { onError(evt) };
-  }
-
-  function onOpen(evt)
-  {
-    writeToScreen("CONNECTED");
-    doSend("WebSocket rocks");
-  }
-
-  function onClose(evt)
-  {
-    writeToScreen("DISCONNECTED");
-  }
-
-  function onMessage(evt)
-  {
-    writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
-    websocket.close();
-  }
-
-  function onError(evt)
-  {
-    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
-  }
-
-  function doSend(message)
-  {
-    writeToScreen("SENT: " + message); 
-    websocket.send(message);
-  }
-
-  function writeToScreen(message)
-  {
-    var pre = document.createElement("p");
-    pre.style.wordWrap = "break-word";
-    pre.innerHTML = message;
-    output.appendChild(pre);
-  }
-
-  window.addEventListener("load", init, false);
-
-</script>
-
-<h2>WebSocket Test</h2>
-
-<div id="output"></div> -->
-
-<!------------------------------------------------------------------------------------------------------------------------>
-
-<!--<!DOCTYPE html>
-<html>
-  
-  <head data-gwd-animation-mode="quickMode">
-    <title>DarkNovember</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="generator" content="Google Web Designer 1.1.0.0723">
-    <title>Canvas Gradient</title>
-    <style>
-      body {
-        background-color: rgb(0, 0, 0);
-      }
-      canvas {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        left: 0px;
-        top: 0px;
-      }
-      .gwd-body {
-        -webkit-transform-style: preserve-3d;
         -webkit-transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        -webkit-transform-style: preserve-3d;
       }
-      .gwd-body {
-        width: 100%;
-        height: 100%;
+      .gwd-p-iljp {
+        position: absolute;
+        font-family:'Times New Roman';
+        text-align: left;
+        color: rgb(0, 0, 0);
+        font-size: 40px;
+        width: 200px;
+        height: 50px;
+        left: 168px;
+        top: 199px;
+      }
+      .gwd-strong-myry {
+        font-size: 40px;
+        font-family: Arial;
+      }
+      .gwd-p-00r4 {
+        position: absolute;
+        font-family:'Times New Roman';
+        text-align: left;
+        color: rgb(0, 0, 0);
+        width: 200px;
+        height: 50px;
+        left: 168px;
+        top: 369.5px;
+      }
+      .gwd-span-2l8q {
+        font-family: Arial;
+        font-weight: bold;
+        font-size: 40px;
+      }
+      .gwd-header-bkvy {
+        position: absolute;
+        font-family:'Times New Roman';
+        text-align: left;
+        color: rgb(0, 0, 0);
+        width: 350px;
+        height: 60px;
+        left: 486px;
+        top: 51.5px;
+      }
+      .gwd-span-qzx6 {
+        font-weight: bold;
+        font-family: Arial;
+        font-size: 45px;
+        color: rgb(61, 59, 189);
+      }
+      .gwd-button-ekjw {
+        height: 50px;
+        width: 250px;
+        -webkit-transform: translate3d(958px, 304px, 0px);
+        -webkit-transform-style: preserve-3d;
+      }
+      .gwd-p-n7yx {
+        left: 540px;
+        top: 301.5px;
+        height: 50px;
+        width: 200px;
+        -webkit-transform: translate3d(168px, 157.5px, 0px);
+        -webkit-transform-style: preserve-3d;
+      }
+      .gwd-div-vgt3 {
+        position: absolute;
+        width: 1036px;
+        height: 116px;
+        left: 168px;
+        top: 213px;
+        font-family:'Times New Roman';
+        text-align: left;
+        color: rgb(0, 0, 0);
+        border-width: 2px;
+        border-style: solid;
+      }
+      .gwd-div-6g17 {
+        position: absolute;
+        height: 133.5px;
+        font-family:'Times New Roman';
+        text-align: left;
+        color: rgb(0, 0, 0);
+        border-width: 2px;
+        border-style: solid;
+        width: 1036px;
+        left: 168px;
+        top: 436px;
       }
     </style>
   </head>
   
-  <body class="gwd-body">
-    <canvas height="600" width="600"></canvas>
-    <script>
-      var canvas = document.getElementsByTagName('canvas')[0],
-          ctx = null,
-          grad = null,
-          body = document.getElementsByTagName('body')[0],
-          color = 255;
-          
-      if (canvas.getContext('2d')) {
-        ctx = canvas.getContext('2d');
-        ctx.clearRect(0, 0, 600, 600);
-        ctx.save();
-        // Create radial gradient
-        grad = ctx.createRadialGradient(0,0,0,0,0,600); 
-        grad.addColorStop(0, '#000');
-        grad.addColorStop(1, 'rgb(' + color + ', ' + color + ', ' + color + ')');
-      
-        // assign gradients to fill
-        ctx.fillStyle = grad;
-      
-        // draw 600x600 fill
-        ctx.fillRect(0,0,600,600);
-        ctx.save();
-        
-        body.onmousemove = function (event) {
-          var width = window.innerWidth, 
-              height = window.innerHeight, 
-              x = event.clientX, 
-              y = event.clientY,
-              rx = 600 * x / width,
-              ry = 600 * y / height;
-              
-          var xc = ~~(256 * x / width);
-          var yc = ~~(256 * y / height);
-      
-          grad = ctx.createRadialGradient(rx, ry, 0, rx, ry, 600); 
-          grad.addColorStop(0, '#000');
-          grad.addColorStop(1, ['rgb(', xc, ', ', (255 - xc), ', ', yc, ')'].join(''));
-          // ctx.restore();
-          ctx.fillStyle = grad;
-          ctx.fillRect(0,0,600,600);
-          // ctx.save();
-        };
-      }
-    </script>
-    <!--<a href="http://github.com/remy/html5demos">
-    <img style="position: absolute; top: 0; left: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub">
-    </a>--
-    <script>
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script>
-      try {
-      var pageTracker = _gat._getTracker("UA-1656750-18");
-      pageTracker._trackPageview();
-      } 
-      catch(err) {}
-    </script>
+  <body>
+    <header class="gwd-header-bkvy"><span class="gwd-span-qzx6">WEBSOCKETS</span>
+
+    </header>
+    <p class="gwd-p-00r4"><span class="gwd-span-2l8q">Sent:</span>
+
+    </p>
+    <p class="gwd-p-n7yx"><span class="gwd-span-2l8q">Recieved:</span>
+
+    </p>
+    <button class="gwd-button-ekjw">SEND</button>
+    <div class="gwd-div-vgt3"></div>
+    <div class="gwd-div-6g17"></div>
   </body>
 
-</html> -->
-
-<!--------------------------------------------------------------------------------------------------------------------------->
-
- Skip to content
-This repository
-
-    Explore
-    Gist
-    Blog
-    Help
-
-    Marcus MarcoAmerena
-
-    1
-    0
-    0
-
-ehughes/MonkeyDo
-
-MonkeyDo / SRC / MonkeyDo-SensorRx.html
-ehughes ehughes on 4 Jul
-1st add! Working files for demo videos
-
-1 contributor
-218 lines (153 sloc) 3.912 kb
-<!DOCTYPE html>
-<meta charset="utf-8" />
-<head>
-<title>Monkey Do!</title>
-</head>
-<script type="text/javascript" src="canvasjs.min.js"></script>
-<script language="javascript" type="text/javascript">
-var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
-var OutputConsole;
-websocket = new WebSocket(wsUri);
-var RxTerminal = [".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","."];
-var RxTerminalSize = 16;
-var RxTerminalPtr = 0;
-var ChartHistory = 64;
-var dps = []; // dataPoints
-var DataPointNum = 0;
-var chart;
-window.onload = function ()
-{
-var i;
-for(i=0;i<ChartHistory;i++)
-{
-dps[i] = ({
-x: DataPointNum++,
-y: 25
-})
-}
-chart = new CanvasJS.Chart("chartContainer",{
-title :{
-text: "Temperature Data"
-},	
-axisY:{
-title: "Temperature (Degrees C)",
-titleFontSize :"16",
-},	
-markerType: "circle",
-axisX:{
-title: "DataPoint",
-titleFontSize : "16"
-},	
-data: [{
-type: "spline",
-dataPoints: dps
-}]
-});
-}
-function init()
-{
-var i;
-OutputConsole = document.getElementById("Output");
-InitWebSocket();
-}
-function SendTestData()
-{
-}
-function InitWebSocket()
-{
-websocket = new WebSocket(wsUri);
-websocket.onopen = function(evt) { onOpen(evt) };
-websocket.onclose = function(evt) { onClose(evt) };
-websocket.onmessage = function(evt) { onMessage(evt) };
-websocket.onerror = function(evt) { onError(evt) };
-}
-function onOpen(evt)
-{
-writeToScreen("Connected to " + wsUri);
-}
-function onClose(evt)
-{
-writeToScreen("Disconnected from " + wsUri);
-}
-function onMessage(evt)
-{
-//var res = evt.data.split(":",2);
-//http://blog.tompawlak.org/split-string-into-tokens-javascript
-res = evt.data.match(/\S+/g)
-var Cmd = res[0].trim();
-var TemperatureString;
-switch(Cmd)
-{
-case "temp":
-TemperatureString = parseFloat(res[1]).toFixed(1);
-writeToScreen("Received Temperature: " + TemperatureString);
-dps.push({
-x: DataPointNum,
-y: parseFloat(res[1])
-})
-dps.shift();	
-DataPointNum++;
-chart.render();
-break;
-default:
-break;
-}
-}
-function onError(evt)
-{
-writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
-websocket.close();
-}
-function doSend(message)
-{
-writeToScreen("SENT: " + message);
-websocket.send(message);
-}
-function writeToScreen(message)
-{
-var i;
-var TmpPtr = RxTerminalPtr;
-var MessageBuf = "";
-RxTerminal[RxTerminalPtr] = message;
-for(i=0;i<RxTerminalSize;i++)
-{
-MessageBuf = MessageBuf + "<br>" + RxTerminal[TmpPtr];
-if(TmpPtr == 0)
-{
-TmpPtr = RxTerminalSize - 1;
-}
-else
-{
-TmpPtr--;
-}
-}
-RxTerminalPtr++;
-if(RxTerminalPtr == RxTerminalSize)
-RxTerminalPtr = 0;
-OutputConsole.innerHTML = MessageBuf;
-}
-window.addEventListener("load", init, false);
-function mDown(obj) {
-obj.style.backgroundColor = "#220000";
-doSend("ssr 0 1");
-}
-function mUp(obj) {
-obj.style.backgroundColor="#D94A38";
-doSend("ssr 0 0");
-}
-</script>
-<div id = "wrapper">
-<center>
-<div style="border:3px gray;">
-<center>
-<h1>MonkeyDo - Data Receiver</h1>
-<hr>
-<img src="MonkeyDo.png" width="200" alt="MonkeyDo"></img>
-<div id = "Output" class = "console" style="width:600px;height:360px;border:1px dashed gray;"></div>
-<div id="chartContainer" style="height: 300px; width:600px;">	</div>
-<h2>A Big Red Button</h2>
-<div class="bigredbutton" onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color:#D94A38; width:100px;height:100px; vertical-align:center;"></div>
-</center>
-</div>
-</center>
-</div>
-
-    Status
-    API
-    Training
-    Shop
-    Blog
-    About
-
-    © 2014 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Contact
-
+</html>
 
 <!--------------------------------------------------------------------------------------------------------------------------->
 
