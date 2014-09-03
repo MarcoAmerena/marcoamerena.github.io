@@ -191,24 +191,24 @@ function onMessage(evt)
 //var res = evt.data.split(":",2);
 //http://blog.tompawlak.org/split-string-into-tokens-javascript
 //////////////////////////////////////////////////////
-//res = evt.data.match(/\S+/g)
-//var Cmd = res[0].trim();
-//var TemperatureString;
-//switch(Cmd)
-//{
-//case "temp":
-//TemperatureString = parseFloat(res[1]).toFixed(1);
-writeToScreen("Received: " + evt); //TemperatureString
-//dps.push({
-//x: DataPointNum,
-//y: parseFloat(res[1])
-//})
-//dps.shift();	
-//DataPointNum++;
-//chart.render();
-//break;
-//default:
-//break;
+res = evt.data.match(/\S+/g)
+var Cmd = res[0].trim();
+var TemperatureString;
+switch(Cmd)
+{
+case "temp":
+TemperatureString = parseFloat(res[1]).toFixed(1);
+writeToScreen("Received Temperature: " + TemperatureString);
+dps.push({
+x: DataPointNum,
+y: parseFloat(res[1])
+})
+dps.shift();	
+DataPointNum++;
+chart.render();
+break;
+default:
+break;
 }
 }
 function onError(evt)
