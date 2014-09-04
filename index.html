@@ -5,6 +5,85 @@
     <title>Websocket</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="generator" content="Google Web Designer 1.1.2.0814">
+    
+    <script language="javascript" type="text/javascript">
+    var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
+    websocket = new WebSocket(wsUri);
+    
+    function InitWebSocket()
+    {
+    websocket = new WebSocket(wsUri);
+    websocket.onopen = function(evt) { onOpen(evt) };
+    websocket.onclose = function(evt) { onClose(evt) };
+    websocket.onmessage = function(evt) { onMessage(evt) };
+    websocket.onerror = function(evt) { onError(evt) };
+    }
+    
+    function onOpen(evt)
+    {
+    writeToScreen("Connected to " + wsUri);
+    }
+    
+    function onClose(evt)
+    {
+    writeToScreen("Disconnected from " + wsUri);
+    }
+    
+    function onMessage(evt)
+    {
+    res = evt.data.match(/\S+/g)
+    //var Cmd = res[0].trim();
+    var TemperatureString;
+    TemperatureString = res;
+    writeToScreen("Received: " + TemperatureString);
+    }
+    
+    function onError(evt)
+    {
+    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+    websocket.close();
+    }
+    
+    function doSend(message)
+    {
+    writeToScreen("SENT: " + message);
+    websocket.send(message);
+    }
+    
+    function writeToScreen(message)
+    {
+    var i;
+    var TmpPtr = RxTerminalPtr;
+    var MessageBuf = "";
+    RxTerminal[RxTerminalPtr] = message;
+    for(i=0;i<RxTerminalSize;i++)
+    {
+    MessageBuf = MessageBuf + "<br>" + RxTerminal[TmpPtr];
+    if(TmpPtr == 0)
+    {
+    TmpPtr = RxTerminalSize - 1;
+    }
+    else
+    {
+    TmpPtr--;
+    }
+    }
+    RxTerminalPtr++;
+    if(RxTerminalPtr == RxTerminalSize)
+    RxTerminalPtr = 0;
+    OutputConsole.innerHTML = MessageBuf;
+    }
+    window.addEventListener("load", init, false);
+    function mDown(obj) {
+    obj.style.backgroundColor = "#220000";
+    doSend("ssr 0 1");
+    }
+    function mUp(obj) {
+    obj.style.backgroundColor="#D94A38";
+    doSend("ssr 0 0");
+    }
+</script>
+    
     <style type="text/css">
       html, body {
         width: 100%;
@@ -272,11 +351,11 @@ OutputConsole.innerHTML = MessageBuf;
 window.addEventListener("load", init, false);
 function mDown(obj) {
 obj.style.backgroundColor = "#220000";
-doSend("ssr 0 1");
+//doSend("ssr 0 1");
 }
 function mUp(obj) {
 obj.style.backgroundColor="#D94A38";
-doSend("ssr 0 0");
+doSend("Big Red Button!");
 }
 </script>
 <div id = "wrapper">
