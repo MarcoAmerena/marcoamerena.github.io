@@ -381,9 +381,9 @@ doSend("Big Red Button!");
 var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
 var OutputConsole;
 websocket = new WebSocket(wsUri);
-//var RxTerminal = [".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","."];
-//var RxTerminalSize = 16;
-//var RxTerminalPtr = 0;
+var RxTerminal = [".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","."];
+var RxTerminalSize = 16;
+var RxTerminalPtr = 0;
 var ChartHistory = 64;
 var dps = []; // dataPoints
 var DataPointNum = 0;
@@ -442,36 +442,8 @@ function onClose(evt)
 {
 writeToScreen("Disconnected from " + wsUri);
 }
-//function onMessage(evt)
-//{
-//var res = evt.data.split(":",2);
-//http://blog.tompawlak.org/split-string-into-tokens-javascript
-//////////////////////////////////////////////////////
-//res = evt.data.match(/\S+/g)
-//var Cmd = res[0].trim();
-//var TemperatureString;
-//switch(Cmd)
-//{
-//case "temp":
-//TemperatureString = parseFloat(res[1]).toFixed(1);
-//writeToScreen("Received Temperature: " + TemperatureString);
-//dps.push({
-//x: DataPointNum,
-//y: parseFloat(res[1])
-//})
-//dps.shift();	
-//DataPointNum++;
-//chart.render();
-//break;
-//default:
-//break;
-//}
-//} 
 function onMessage(evt)
 {
-//var res = evt.data.split(":",2);
-//http://blog.tompawlak.org/split-string-into-tokens-javascript
-//////////////////////////////////////////////////////
 res = evt.data.match(/\S+/g)
 //var Cmd = res[0].trim();
 var TemperatureString;
