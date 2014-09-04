@@ -10,6 +10,8 @@
     var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
     websocket = new WebSocket(wsUri);
     
+    OutputConsole = document.getElementById("gwd-span-lm8h");
+    
     function InitWebSocket()
     {
     websocket = new WebSocket(wsUri);
@@ -64,6 +66,7 @@
     RxTerminalPtr = 0;
     OutputConsole.innerHTML = MessageBuf;
     }
+    
     window.addEventListener("load", init, false);
     function mDown(obj) 
     {
@@ -182,6 +185,7 @@
 
 <!--------------------------------------------------------------------------------------------------------------------------->
 
+<!--
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <head>
@@ -361,6 +365,7 @@ doSend("Big Red Button!");
 </div>
 </center>
 </div>
+-->
 
   
 
