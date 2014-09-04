@@ -445,24 +445,24 @@ writeToScreen("Disconnected from " + wsUri);
 function onMessage(evt)
 {
 res = evt.data.match(/\S+/g)
-//var Cmd = res[0].trim();
+var Cmd = res[0].trim();
 var TemperatureString;
-//switch(Cmd)
-//{
-//case "temp":
+switch(Cmd)
+{
+case "temp":
 TemperatureString = res;
 writeToScreen("Received: " + TemperatureString);
-//dps.push({
-//x: DataPointNum,
-//y: parseFloat(res[1])
-//})
-//dps.shift();	
-//DataPointNum++;
-//chart.render();
-//break;
-//default:
-//break;
-//}
+dps.push({
+x: DataPointNum,
+y: parseFloat(res[1])
+})
+dps.shift();	
+DataPointNum++;
+chart.render();
+break;
+default:
+break;
+}
 }
 function onError(evt)
 {
