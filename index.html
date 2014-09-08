@@ -10,8 +10,21 @@
         font-size:18px;
       }
     </style>
-    
-     <script type="text/javascript">
+  </head>
+  <body>
+    <div align="center">
+      Choose a question to ask:
+      <select id="question" name="question" onchange="sendMessage(this.value);">
+        <option value="1">What's Your Name</option>
+        <option value="2">Which OS You Are Running On?</option>
+        <option value="3">What Time Is It?</option>
+      </select>
+      <br/><br/>
+      <div id="response">
+        My Name is jWebSocketServer
+      </div>
+    </div>
+    <script type="text/javascript">
 var connection = new WebSocket('ws://localhost:8787', 'json');
 connection.onopen = function () {
   console.log('Connection Opened');
@@ -27,23 +40,6 @@ function sendMessage(msg){
   connection.send(msg);
 }
 </script>
-  </head>
-  
- 
-
-  <body>
-    <div align="center">
-      Choose a question to ask:
-      <select id="question" name="question" onchange="sendMessage(this.value);">
-        <option value="1">What's Your Name</option>
-        <option value="2">Which OS You Are Running On?</option>
-        <option value="3">What Time Is It?</option>
-      </select>
-      <br/><br/>
-      <div id="response">
-        My Name is jWebSocketServer
-      </div>
-    </div>
   </body>
 </html>
 
