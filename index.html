@@ -153,7 +153,7 @@ function sendMessage(msg){
   var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
   var connection = new WebSocket(wsUri);
 connection.onopen = function () {
-  console.log('Connection Opened');
+  document.getElementById("incomingdiv").innerHTML=e.data+"<br/>";
 };
 /*connection.onerror = function (error) {
   console.log('WebSocket Error ' + error);
