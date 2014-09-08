@@ -106,15 +106,16 @@
     function InitWebSocket()
     {
     websocket = new WebSocket(wsUri);
-    websocket.onopen = function(evt) { onOpen(evt) };
-    websocket.onclose = function(evt) { onClose(evt) };
-    websocket.onmessage = function(evt) { onMessage(evt) };
-    websocket.onerror = function(evt) { onError(evt) };
+    websocket.onopen = function(event) { onOpen(event) };
+    websocket.onclose = function(event) { onClose(event) };
+    websocket.onmessage = function(event) { onMessage(event) };
+    websocket.onerror = function(event) { onError(event) };
     }
     
-    function onOpen(evt)
+    function onOpen(event)
     {
-    var chatdiv = document.getElementById('incomingdiv'); chatdiv.innerHTML = chatdiv.innerHTML + evt.data + "<br />";
+    var chatdiv = document.getElementById('chat'); 
+    chatdiv.innerHTML = chatdiv.innerHTML + event.data + "<br />";
     }
     
     /*function onClose(evt)
