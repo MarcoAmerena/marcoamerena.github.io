@@ -1,4 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebSocket Test</title>
+    <style>
+      #response{
+        width: 200px;
+        background: #F2F2F2;
+        padding: 120px 0px 120px 0px;
+        font-size:18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div align="center">
+      Choose a question to ask:
+      <select id="question" name="question" onchange="sendMessage(this.value);">
+        <option value="1">What's Your Name</option>
+        <option value="2">Which OS You Are Running On?</option>
+        <option value="3">What Time Is It?</option>
+      </select>
+      <br/><br/>
+      <div id="response">
+        My Name is jWebSocketServer
+      </div>
+    </div>
+  </body>
+</html>
 
+<!---------------------------------------------------------------------------------------------------------------------->
+
+<!--
 <!DOCTYPE html>
 <html>
   
@@ -119,7 +150,7 @@ function sendMessage(msg){
   
   
   
-    <!-- var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
+var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
     websocket = new WebSocket(wsUri);
     
     function InitWebSocket()
@@ -185,7 +216,7 @@ function sendMessage(msg){
     doSend("Github");
     }
     
-</script> -->
+</script> 
   
   <body>
     <div id="incomingdiv" class="gwd-div-tew3"></div>
@@ -203,7 +234,7 @@ function sendMessage(msg){
   </body>
 
 </html> 
-
+-->
 
 <!--------------------------------------------------------------------------------------------------------------------------->
 
