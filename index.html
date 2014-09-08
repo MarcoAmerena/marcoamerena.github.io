@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html>
   <head>
@@ -44,10 +45,11 @@ function sendMessage(msg){
 </script>
   </body>
 </html>
+-->
 
 <!---------------------------------------------------------------------------------------------------------------------->
 
-<!--
+
 <!DOCTYPE html>
 <html>
   
@@ -147,13 +149,13 @@ function sendMessage(msg){
       }
     </style>
     
-    <script language="javascript" type="text/javascript">
+  <script language="javascript" type="text/javascript">
   var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
   var connection = new WebSocket(wsUri);
 connection.onopen = function () {
   console.log('Connection Opened');
 };
-connection.onerror = function (error) {
+/*connection.onerror = function (error) {
   console.log('WebSocket Error ' + error);
 };
 connection.onmessage = function (e) {
@@ -162,12 +164,12 @@ connection.onmessage = function (e) {
 };
 function sendMessage(msg){
   connection.send(msg);
-}
+}*/
 </script>
   </head>
   
   
-  
+  <!--
 var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
     websocket = new WebSocket(wsUri);
     
@@ -234,7 +236,7 @@ var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
     doSend("Github");
     }
     
-</script> 
+</script> -->
   
   <body>
     <div id="incomingdiv" class="gwd-div-tew3"></div>
@@ -252,7 +254,7 @@ var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
   </body>
 
 </html> 
--->
+
 
 <!--------------------------------------------------------------------------------------------------------------------------->
 
