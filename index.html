@@ -97,9 +97,8 @@
         -webkit-transform-style: preserve-3d;
       }
     </style>
-  </head>
-  
-  <script language="javascript" type="text/javascript">
+    
+    <script language="javascript" type="text/javascript">
   var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
   var connection = new WebSocket(wsUri);
 connection.onopen = function () {
@@ -116,8 +115,11 @@ function sendMessage(msg){
   connection.send(msg);
 }
 </script>
+  </head>
   
-    /*var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
+  
+  
+    <!-- var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
     websocket = new WebSocket(wsUri);
     
     function InitWebSocket()
@@ -182,8 +184,8 @@ function sendMessage(msg){
     obj.style.backgroundColor = "#220000";
     doSend("Github");
     }
-    */
-</script> 
+    
+</script> -->
   
   <body>
     <div id="incomingdiv" class="gwd-div-tew3"></div>
