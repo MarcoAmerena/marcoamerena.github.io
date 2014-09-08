@@ -114,7 +114,7 @@
     
     function onOpen(evt)
     {
-    document.getElementById("incomingdiv").style.display = "CONNECTED";
+    var chatdiv = document.getElementById('incomingdiv'); chatdiv.innerHTML = chatdiv.innerHTML + evt.data + "<br />";
     }
     
     /*function onClose(evt)
