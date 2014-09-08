@@ -100,7 +100,24 @@
   </head>
   
   <script language="javascript" type="text/javascript">
-    var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
+  var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
+  var connection = new WebSocket(wsUri);
+connection.onopen = function () {
+  console.log('Connection Opened');
+};
+connection.onerror = function (error) {
+  console.log('WebSocket Error ' + error);
+};
+connection.onmessage = function (e) {
+  if(e.data.indexOf("subProtocol")==-1)
+    document.getElementById("response").innerHTML=e.data+"<br/>";
+};
+function sendMessage(msg){
+  connection.send(msg);
+}
+</script>
+  
+    /*var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
     websocket = new WebSocket(wsUri);
     
     function InitWebSocket()
@@ -118,7 +135,7 @@
     chatdiv.innerHTML = chatdiv.innerHTML + event.data + "<br />";
     }
     
-    /*function onClose(evt)
+    function onClose(evt)
     {
     writeToScreen("Disconnected from " + wsUri);
     }
