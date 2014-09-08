@@ -21,11 +21,13 @@
       </select>
       <br/><br/>
       <div id="response">
-        My Name is jWebSocketServer
+        
       </div>
     </div>
     <script type="text/javascript">
-var connection = new WebSocket('ws://localhost:8787', 'json');
+    var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
+var connection = new WebSocket(wsUri);
+//var connection = new WebSocket('ws://localhost:8787', 'json');
 connection.onopen = function () {
   console.log('Connection Opened');
 };
