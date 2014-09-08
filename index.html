@@ -10,9 +10,8 @@
         font-size:18px;
       }
     </style>
-  </head>
-  
-  <script type="text/javascript">
+    
+     <script type="text/javascript">
 var connection = new WebSocket('ws://localhost:8787', 'json');
 connection.onopen = function () {
   console.log('Connection Opened');
@@ -28,6 +27,9 @@ function sendMessage(msg){
   connection.send(msg);
 }
 </script>
+  </head>
+  
+ 
 
   <body>
     <div align="center">
