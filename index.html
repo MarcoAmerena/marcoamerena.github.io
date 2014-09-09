@@ -156,6 +156,11 @@ function sendMessage(msg){
         -webkit-transform: translate3d(978px, 531.5px, 0px);
         -webkit-transform-style: preserve-3d;
       }
+      .classSent {
+        -webkit-transform: translate3d(-412px, 77.5px, 0px);
+        -webkit-transform-style: preserve-3d;
+        width: 350px;
+      }
     </style>
     
   </head>
@@ -163,7 +168,6 @@ function sendMessage(msg){
   
   <body>
     <div class="classDivRecieve" id="incoming"></div>
-    <div class="classDivSend"></div>
     <button class="classButSend" onmousedown="mDown(this)">SEND</button>
     <p class="classHeading"><strong class="classHeading1">WEBSOCKET</strong>
 
@@ -171,9 +175,11 @@ function sendMessage(msg){
     <p class="classParaRecieve"><span class="classSpanRecieve">Recieved:</span>
 
     </p>
-    <p class="classParaSend"><span class="classSpanSend">Sent:</span>
-
-    </p>
+    
+   <form name="input" action="demo_form_action.asp" method="get" class="classSent">Send
+      <input type="text" name="user">
+      <input type="submit" value="SEND">
+    </form>
     
     <script type="text/javascript">
     var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
@@ -194,7 +200,7 @@ function sendMessage(msg){
 }
 
 function mUp(obj) {
-sendMessage("Big Red Button!");
+sendMessage("Hello from MyGithub!");
 }
 </script>
   </body>
