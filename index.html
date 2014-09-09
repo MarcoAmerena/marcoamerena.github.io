@@ -158,28 +158,6 @@ function sendMessage(msg){
       }
     </style>
     
-  <script language="javascript" type="text/javascript">
-  var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
-  var connection = new WebSocket(wsUri);
-  
-  connection.onopen = function () {
-  console.log('Connection Opened');
-};
-connection.onmessage = function (e) 
-{
-    document.getElementById("incoming").innerHTML=e.data+"<br/>";
-};
-/*connection.onerror = function (error) {
-  console.log('WebSocket Error ' + error);
-};
-connection.onmessage = function (e) {
-  if(e.data.indexOf("subProtocol")==-1)
-    document.getElementById("response").innerHTML=e.data+"<br/>";
-};
-function sendMessage(msg){
-  connection.send(msg);
-}*/
-</script>
   </head>
   
   
@@ -196,6 +174,25 @@ function sendMessage(msg){
     <p class="classParaSend"><span class="classSpanSend">Sent:</span>
 
     </p>
+    
+    <script type="text/javascript">
+    var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
+var connection = new WebSocket(wsUri);
+//var connection = new WebSocket('ws://localhost:8787', 'json');
+connection.onopen = function () {
+  console.log('Connection Opened');
+};
+connection.onerror = function (error) {
+  console.log('WebSocket Error ' + error);
+};
+connection.onmessage = function (e) {
+  //if(e.data.indexOf("subProtocol")==-1)
+    document.getElementById("incoming").innerHTML=e.data+"<br/>";
+};
+function sendMessage(msg){
+  connection.send(msg);
+}
+</script>
   </body>
 
 </html> 
