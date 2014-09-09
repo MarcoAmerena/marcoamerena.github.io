@@ -188,13 +188,14 @@ connection.onmessage = function (e) {
 };
 function sendmessage() 
 { 
-  var messagetext = document.getElementById('chatmessage').value; messagetext = username + ": " + messagetext; 
+  var messagetext = document.getElementById('outgoing').value; 
+  //messagetext = username + ": " + messagetext; 
   connection.send(messagetext); 
   
 }
 
 function mUp(obj) {
-sendMessage();
+sendmessage();
 }
 </script>
   </body>
