@@ -152,8 +152,9 @@ function sendMessage(msg){
   <script language="javascript" type="text/javascript">
   var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
   var connection = new WebSocket(wsUri);
-connection.onopen = function () {
-  document.getElementById("incomingdiv").innerHTML=e.data+"<br/>";
+connection.onmessage = function (e) 
+{
+    document.getElementById("incoming").innerHTML=e.data+"<br/>";
 };
 /*connection.onerror = function (error) {
   console.log('WebSocket Error ' + error);
@@ -239,7 +240,7 @@ var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
 </script> -->
   
   <body>
-    <div id="incomingdiv" class="gwd-div-tew3"></div>
+    <div class="gwd-div-tew3" id="incoming"></div>
     <div class="gwd-div-erlg"></div>
     <button class="gwd-button-job5" onmousedown="mDown(this)">SEND</button>
     <p class="gwd-h1-3rin"><strong class="gwd-strong-30bb">WEBSOCKET</strong>
