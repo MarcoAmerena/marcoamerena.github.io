@@ -188,13 +188,13 @@ connection.onmessage = function (e) {
 };
 function sendmessage() 
 { 
-  var messagetext = document.getElementById('outgoing').value; 
-  //messagetext = username + ": " + messagetext; 
-  connection.send(messagetext); 
+  //var messagetext = document.getElementById('outgoing').value; 
+  //messagetext = username + ": " + messagetext;
+  connection.send("MyGithub"); 
   
 }
 
-function mUp(obj) {
+function mDown(obj) {
 sendmessage();
 }
 </script>
