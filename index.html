@@ -161,6 +161,10 @@ function sendMessage(msg){
   <script language="javascript" type="text/javascript">
   var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
   var connection = new WebSocket(wsUri);
+  
+  connection.onopen = function () {
+  console.log('Connection Opened');
+};
 connection.onmessage = function (e) 
 {
     document.getElementById("incoming").innerHTML=e.data+"<br/>";
