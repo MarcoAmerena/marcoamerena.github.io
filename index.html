@@ -147,6 +147,34 @@
     <label class="gwd-label-o76a" id="lb_temp">Temperature:</label>
     <label class="gwd-label-q78a" id="lb_trip">Trip Level:</label>
     <label class="gwd-label-8slz" id="lb_hyst">Hysteresis:</label>
+    
+    <script type="text/javascript">
+    var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
+    var connection = new WebSocket(wsUri);
+    
+   /* connection.onopen = function () 
+    {
+    console.log('Connection Opened');
+    };
+    
+    connection.onerror = function (error) 
+    {
+    console.log('WebSocket Error ' + error);
+    };
+    
+    connection.onmessage = function (e) 
+    {
+    document.getElementById("incoming").innerHTML=e.data+"<br/>";
+    };
+    
+    function sendmessage() 
+    { 
+    //var messagetext = document.getElementById('outgoing').value; 
+    //messagetext = username + ": " + messagetext;
+    connection.send("MyGithub"); 
+    } */
+
+    </script>
   </body>
 
 </html>
