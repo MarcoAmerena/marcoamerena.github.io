@@ -152,7 +152,7 @@
     var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
     var connection = new WebSocket(wsUri);
     
-   /* connection.onopen = function () 
+    connection.onopen = function () 
     {
     console.log('Connection Opened');
     };
@@ -164,15 +164,15 @@
     
     connection.onmessage = function (e) 
     {
-    document.getElementById("incoming").innerHTML=e.data+"<br/>";
+    document.getElementById("in_temp").innerHTML=e.data+"<br/>";
     };
     
-    function sendmessage() 
-    { 
+   // function sendmessage() 
+    //{ 
     //var messagetext = document.getElementById('outgoing').value; 
     //messagetext = username + ": " + messagetext;
-    connection.send("MyGithub"); 
-    } */
+   // connection.send("MyGithub"); 
+    //} */
 
     </script>
   </body>
