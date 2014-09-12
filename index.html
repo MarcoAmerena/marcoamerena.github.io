@@ -79,13 +79,13 @@
         left: 791px;
         top: 428.49999999999994px;
       }
-      .gwd-input-jrs2 {
+      /*.gwd-input-jrs2 {
         position: absolute;
         height: 25px;
         width: 190px;
         left: 371px;
         top: 251.50000000000006px;
-      }
+      }*/
       .gwd-input-3e1c {
         position: absolute;
         height: 25px;
@@ -143,13 +143,14 @@
         top: 178.5px;
         -webkit-transform-style: preserve-3d;
       }
-      .gwd-div-m55c {
+      .gwd-div-3m7l {
         position: absolute;
-        width: 198px;
-        height: 30px;
-        font-family:'Times New Roman';
+        width: 182px;
+        height: 25px;
+        font-family: Arial;
+        font-size: 30px;
         text-align: left;
-        left: 573px;
+        left: 383px;
         top: 252.5px;
       }
     </style>
@@ -167,13 +168,13 @@
       <a href="http://www.sapphireresearch.com/" target="_blank" class="gwd-a-zbb3">Sapphire Research and Electronics Ltd</a>
     </nav>
     <button class="gwd-button-j36b" id="but_save">Save</button>
-    <input class="gwd-input-jrs2" type="number" id="in_temp" placeholder="Temp °C" readonly="">
+    <!--<input class="gwd-input-jrs2" type="number" id="in_temp" placeholder="Temp °C" readonly="">-->
     <input class="gwd-input-3e1c" type="number" id="in_trip" min="10" max="120" placeholder="10 - 120">
     <input class="gwd-input-y7a6" type="number" id="in_hyst" min="1" max="3" placeholder="1 - 3">
     <label class="gwd-label-o76a" id="lb_temp">Temperature:</label>
     <label class="gwd-label-q78a" id="lb_trip">Trip Level:</label>
     <label class="gwd-label-8slz" id="lb_hyst">Hysteresis:</label>
-    <div class="gwd-div-m55c" id="div_temp"></div>
+    <div class="gwd-div-3m7l" id="div_temp">20.31 C</div>
     
     <script type="text/javascript">
     var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
@@ -191,7 +192,7 @@
     
     connection.onmessage = function (e) 
     {
-    document.getElementById("div_temp").innerHTML=e.data+"<br/>";
+    //document.getElementById("div_temp").innerHTML=e.data+"<br/>";
     };
     
     function sendmessage() 
