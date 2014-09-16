@@ -224,6 +224,8 @@
     document.getElementById("div_temp").innerHTML=splitted[0];
     document.getElementById("div_trip").innerHTML=splitted[1];
     document.getElementById("div_hyst").innerHTML=splitted[2];
+    document.getElementById("in_trip").innerHTML=splitted[1];
+    document.getElementById("in_hyst").innerHTML=splitted[2];
 
     //document.getElementById("div_temp").innerHTML=e.data+"<br/>";
     };
@@ -240,57 +242,7 @@
 
 </html>
 
-<!---------------------------------------------------------------------------------------------------------------->
 
-<!--
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>WebSocket Test</title>
-    <style>
-      #response{
-        width: 200px;
-        background: #F2F2F2;
-        padding: 120px 0px 120px 0px;
-        font-size:18px;
-      }
-    </style>
-  </head>
-  <body>
-    <div align="center">
-      Choose a question to ask:
-      <select id="question" name="question" onchange="sendMessage(this.value);">
-        <option value="1">What's Your Name</option>
-        <option value="2">Which OS You Are Running On?</option>
-        <option value="3">What Time Is It?</option>
-      </select>
-      <br/><br/>
-      <div id="response">
-        
-      </div>
-    </div>
-    <script type="text/javascript">
-    var wsUri = "ws://sockets.mbed.org/ws/MarcoAmerena/rw";
-var connection = new WebSocket(wsUri);
-//var connection = new WebSocket('ws://localhost:8787', 'json');
-connection.onopen = function () {
-  console.log('Connection Opened');
-};
-connection.onerror = function (error) {
-  console.log('WebSocket Error ' + error);
-};
-connection.onmessage = function (e) {
-  if(e.data.indexOf("subProtocol")==-1)
-    document.getElementById("response").innerHTML=e.data+"<br/>";
-};
-function sendMessage(msg){
-  connection.send(msg);
-}
-</script>
-  </body>
-</html>
-
--->
 <!---------------------------------------------------------------------------------------------------------------------->
 
 <!--
