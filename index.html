@@ -221,7 +221,9 @@
     var string = e.data;
     var splitted = string.split(delimeter);
     
-    document.getElementById("div_temp").innerHTML=splitted[0];
+    var temp = parseFloat(splitted[0])
+    
+    document.getElementById("div_temp").innerHTML=temp;
     document.getElementById("div_trip").innerHTML=splitted[1];
     document.getElementById("div_hyst").innerHTML=splitted[2];
     document.getElementById("in_trip").innerHTML=splitted[1];
