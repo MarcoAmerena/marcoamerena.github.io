@@ -225,7 +225,7 @@
     var trip = parseFloat(splitted[1]).toFixed(2);
     var hyst = parseFloat(splitted[2]).toFixed(2);
     
-    if (temp < trip)
+    if (temp >= trip)
   	{
 	    document.getElementById("div_temp").style.color="#ED303C";
   	}
