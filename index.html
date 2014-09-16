@@ -192,7 +192,16 @@
     
     connection.onmessage = function (e) 
     {
-    document.getElementById("div_temp").innerHTML=e.data+"<br/>";
+    var delimeter = '*';
+    //var string = 'part1*part2*part3';
+    var string = e.data;
+    var splitted = string.split(delimeter);
+    
+    document.getElementById("div_temp").innerHTML=splitted[0];
+    document.getElementById("in_trip").innerHTML=splitted[1];
+    document.getElementById("in_hyst").splitted[2];
+
+    //document.getElementById("div_temp").innerHTML=e.data+"<br/>";
     };
     
     function sendmessage() 
