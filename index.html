@@ -226,9 +226,13 @@
     var hyst = parseFloat(splitted[2]).toFixed(2);
     
     if (temp >= trip)
-  	{
-	    document.getElementById("div_temp").style.color="#ED303C";
-  	}
+    {
+	document.getElementById("div_temp").style.color="#ED303C";
+    }
+    else if (temp < trip)
+    {
+	document.getElementById("div_temp").style.color="#000000";
+    }
     
     document.getElementById("div_temp").innerHTML=temp;
     document.getElementById("div_trip").innerHTML =trip;
