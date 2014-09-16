@@ -223,9 +223,10 @@
     
     function sendmessage() 
     { 
-    //var messagetext = document.getElementById('outgoing').value; 
-    //messagetext = username + ": " + messagetext;
-      connection.send("SappT"); 
+    var sendtrip = document.getElementById('in_trip').value; 
+    var sendhyst = document.getElementById('in_hyst').value; 
+    var sending = sendtrip + "*" + sendhyst;
+      connection.send(sending); 
     } 
     
     function Clicked(obj) 
